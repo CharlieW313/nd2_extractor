@@ -47,11 +47,11 @@ def predict_FOVs(directory):
 
 def save_image(frame, i, img_format,save_directory,FOV,IMG_CHANNELS,channel):
     if (img_format == "TIF") or (img_format == "TIFF"):
-        cv2.imwrite(save_directory + 'xy{}_T{}_{}.tif'.format(str(FOV).zfill(3),str(i).zfill(4),IMG_CHANNELS[channel]), frame, [cv2.IMWRITE_TIFF_COMPRESSION, 1])
+        cv2.imwrite(save_directory + 'xy{}_{}_T{}.tif'.format(str(FOV).zfill(3),IMG_CHANNELS[channel],str(i).zfill(4)), frame, [cv2.IMWRITE_TIFF_COMPRESSION, 1])
     if img_format == "PNG":
-        cv2.imwrite(save_directory + 'xy{}_T{}_{}.png'.format(str(FOV).zfill(3),str(i).zfill(4),IMG_CHANNELS[channel]), frame)
+        cv2.imwrite(save_directory + 'xy{}_{}_T{}.png'.format(str(FOV).zfill(3),IMG_CHANNELS[channel],str(i).zfill(4)), frame)
     else:
-        cv2.imwrite(save_directory + 'xy{}_T{}_{}.tif'.format(str(FOV).zfill(3),str(i).zfill(4),IMG_CHANNELS[channel]), frame, [cv2.IMWRITE_TIFF_COMPRESSION, 1])
+        cv2.imwrite(save_directory + 'xy{}_{}_T{}.tif'.format(str(FOV).zfill(3),IMG_CHANNELS[channel],str(i).zfill(4)), frame, [cv2.IMWRITE_TIFF_COMPRESSION, 1])
 
         
         
